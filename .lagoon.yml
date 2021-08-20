@@ -1,6 +1,6 @@
 docker-compose-yaml: docker-compose.yml
 
-project: drupal9-example-advanced
+project: amazeeio-ddev
 
 tasks:
 #   pre-rollout:
