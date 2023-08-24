@@ -1,6 +1,6 @@
 docker-compose-yaml: docker-compose.yml
 
-project: drupal10-base
+project: amazeeio-ddev
 
 tasks:
 #   pre-rollout:

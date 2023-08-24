@@ -1,5 +1,5 @@
 {
-    "name": "lagoon-examples/drupal10-base",
+    "name": "amazeeio-demos/amazeeio-ddev",
     "description": "Project template for Drupal 10 projects with MariaDB, hosted on Lagoon",
     "type": "project",
     "license": "GPL-2.0-or-later",
