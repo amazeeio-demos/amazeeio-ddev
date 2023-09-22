@@ -27,11 +27,11 @@ tasks:
 lagoon-sync:
   mariadb:
     config:
-      hostname: "${MARIADB_HOST:-mariadb}"
-      username: "${MARIADB_USERNAME:-drupal}"
-      password: "${MARIADB_PASSWORD:-drupal}"
+      hostname: "${MARIADB_HOST:-db}"
+      username: "${MARIADB_USERNAME:-db}"
+      password: "${MARIADB_PASSWORD:-db}"
       port: "${MARIADB_PORT:-3306}"
-      database: "${MARIADB_DATABASE:-drupal}"
+      database: "${MARIADB_DATABASE:-db}"
   files:
     config:
-      sync-directory: "/app/web/sites/default/files"
+      sync-directory: "web/sites/default/files"
