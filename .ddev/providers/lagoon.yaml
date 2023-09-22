@@ -25,7 +25,6 @@ db_import_command:
     MARIADB_PASSWORD=db
     MARIADB_DATABASE=db
     lagoon-sync sync mariadb -p ${LAGOON_PROJECT} -e ${LAGOON_ENVIRONMENT} --no-interaction 
-    echo "Downloaded db dumps for database"
 
 files_import_command:
   command: |
