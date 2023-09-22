@@ -27,6 +27,7 @@ tasks:
 lagoon-sync:
   mariadb:
     config:
+      # TODO: How can this be done properly in a new project? Or should we just set MARIADB_HOST etc?
       hostname: "${MARIADB_HOST:-db}"
       username: "${MARIADB_USERNAME:-db}"
       password: "${MARIADB_PASSWORD:-db}"
