@@ -27,12 +27,11 @@ tasks:
 lagoon-sync:
   mariadb:
     config:
-      # TODO: How can this be done properly in a new project? Or should we just set MARIADB_HOST etc?
-      hostname: "${MARIADB_HOST:-db}"
-      username: "${MARIADB_USERNAME:-db}"
-      password: "${MARIADB_PASSWORD:-db}"
+      hostname: "${MARIADB_HOST:-mariadb}"
+      username: "${MARIADB_USERNAME:-drupal}"
+      password: "${MARIADB_PASSWORD:-drupal}"
       port: "${MARIADB_PORT:-3306}"
-      database: "${MARIADB_DATABASE:-db}"
+      database: "${MARIADB_DATABASE:-drupal}"
   files:
     config:
       sync-directory: "web/sites/default/files"
