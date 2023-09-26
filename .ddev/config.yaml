@@ -1,0 +1,9 @@
+name: amazeeio-ddev
+type: drupal9
+docroot: "web"
+php_version: "8.1"
+webserver_type: nginx-fpm
+database:
+    type: mariadb
+    version: "10.4"
+web_environment: []
