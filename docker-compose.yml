@@ -22,7 +22,9 @@ x-user:
 volumes:
   files:
     {}
-  db:
+  mariadb:
+    {}
+  postgres:
     {}
 
 services:
@@ -95,7 +97,7 @@ services:
     environment:
       << : *default-environment
     volumes:
-      - db:/var/lib/mysql
+      - mariadb:/var/lib/mysql
 
   postgres:
     image: uselagoon/postgres-15-drupal:latest
@@ -108,7 +110,7 @@ services:
     environment:
       << : *default-environment
     volumes:
-      - db:/var/lib/postgresql/data
+      - postgres:/var/lib/postgresql/data
 
 networks:
   amazeeio-network:
