@@ -32,6 +32,13 @@ lagoon-sync:
       password: "${MARIADB_PASSWORD:-drupal}"
       port: "${MARIADB_PORT:-3306}"
       database: "${MARIADB_DATABASE:-drupal}"
+  postgres:
+    config:
+      hostname: "${POSTGRES_HOST:-postgres}"
+      username: "${POSTGRES_USERNAME:-drupal}"
+      password: "${POSTGRES_PASSWORD:-drupal}"
+      port: "${POSTGRES_PORT:-5432}"
+      database: "${POSTGRES_DATABASE:-drupal}"
   files:
     config:
       sync-directory: "web/sites/default/files"
