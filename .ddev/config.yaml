@@ -5,5 +5,5 @@ php_version: "8.1"
 webserver_type: nginx-fpm
 database:
     type: mariadb
-    version: "10.4"
+    version: "10.11"
 web_environment: []
