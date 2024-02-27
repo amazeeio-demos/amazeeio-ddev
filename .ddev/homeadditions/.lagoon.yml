@@ -1,0 +1,15 @@
+current: ""
+default: test6
+lagoons:
+  test6:
+    graphql: https://api.main.lagoon-core.test6.amazee.io/graphql
+    hostname: ssh.main.lagoon-core.test6.amazee.io
+    ui: ""
+    kibana: ""
+    port: "22"
+    token: ""
+    version: v2.14.1
+    sshkey: ""
+    sshportal: false
+updatecheckdisable: true
+environmentfromdirectory: false

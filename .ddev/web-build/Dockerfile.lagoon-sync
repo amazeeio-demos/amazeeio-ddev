@@ -1,0 +1,2 @@
+# Install lagoon-sync v0.8.0-alpha.2
+RUN set -x && set -o pipefail && tag=$(curl -L --fail --silent "https://api.github.com/repos/uselagoon/lagoon-sync/releases/128641043" | jq -r .tag_name) && curl --fail -sSL "https://github.com/uselagoon/lagoon-sync/releases/download/${tag}/lagoon-sync_${tag:1}_linux_amd64" --output /usr/local/bin/lagoon-sync && chmod 777 /usr/local/bin/lagoon-sync

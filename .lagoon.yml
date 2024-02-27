@@ -1,3 +1,6 @@
+api: https://api.main.lagoon-core.test6.amazee.io/graphql
+ssh: ssh.main.lagoon-core.test6.amazee.io:22
+
 docker-compose-yaml: docker-compose.yml
 
 project: amazeeio-ddev
@@ -25,6 +28,9 @@ tasks:
         service: cli
 
 lagoon-sync:
+  ssh:
+    host: "ssh.main.lagoon-core.test6.amazee.io"
+    port: "22"
   mariadb:
     config:
       hostname: "${MARIADB_HOST:-mariadb}"
@@ -32,6 +38,19 @@ lagoon-sync:
       password: "${MARIADB_PASSWORD:-drupal}"
       port: "${MARIADB_PORT:-3306}"
       database: "${MARIADB_DATABASE:-drupal}"
+  mariadb-custom:
+    transfer-resource: "/tmp/lagoon-sync-mariadb-custom-dump.sql"
+    source:
+      commands:
+        - "mysqldump --max-allowed-packet=500M --quick --add-locks --no-autocommit --single-transaction -h${MARIADB_HOST:-mariadb} -u${MARIADB_USERNAME:-drupal} -p${MARIADB_PASSWORD:-drupal} -P${MARIADB_PORT:-3306} ${MARIADB_DATABASE:-drupal} > {{ .transferResource }}"
+        - "sed -i 's/DEFINER=[^[:space:]]\\+ //' {{ .transferResource }}"
+        - "gzip {{ .transferResource }}"
+        - "mv {{ .transferResource }}.gz {{ .transferResource }}"
+    target:
+      commands:
+        - "mv {{ .transferResource }} {{ .transferResource }}.gz"
+        - "gunzip {{ .transferResource }}.gz"
+        - "mysql -h${MARIADB_HOST:-mariadb} -u${MARIADB_USERNAME:-drupal} -p${MARIADB_PASSWORD:-drupal} -P${MARIADB_PORT:-3306} ${MARIADB_DATABASE:-drupal} < {{ .transferResource }}"
   files:
     config:
       sync-directory: "web/sites/default/files"
