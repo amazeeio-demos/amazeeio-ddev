@@ -1,3 +1,10 @@
+# Archived Project
+
+Please see https://github.com/ddev/test-amazeeio-lagoon for the updated version of this project.
+
+---
+
+
 # Base template for Drupal 10 projects hosted on Lagoon
 
 This template includes everything necessary to run on [Lagoon](https://www.github.com/uselagoon/lagoon) (in both the local development environments or on hosted Lagoon clusters.)
